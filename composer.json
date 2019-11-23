@@ -1,0 +1,34 @@
+{
+  "name": "xcutionsociety/php-tools",
+  "description": "A collection of functions you might need",
+  "type": "library",
+  "keywords": [
+    "php",
+    "tools"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "XcutionSociety",
+      "email": "xcutionsociety@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "XcutionSociety\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "XcutionSociety\\XcTools"
+      ],
+      "aliases": {
+        "XCS": "XcutionSociety\\XcTools"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
