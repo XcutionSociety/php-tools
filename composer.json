@@ -19,16 +19,6 @@
       "XcutionSociety\\": "src/"
     }
   },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "XcutionSociety\\Utils"
-      ],
-      "aliases": {
-        "XCS": "XcutionSociety\\Utils"
-      }
-    }
-  },
   "minimum-stability": "stable",
   "prefer-stable": true
 }
