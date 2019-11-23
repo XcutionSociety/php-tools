@@ -4,5 +4,5 @@
 
 ## Install
 ```composer
-composer require xcution-society/tools
+composer require xcutionsociety/php-tools
 ```
