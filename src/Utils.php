@@ -5,7 +5,7 @@
  * @version 0.1
  */
 
-namespace XcutionSocietyTools;
+namespace XcutionSociety;
 
 class Utils
 {
