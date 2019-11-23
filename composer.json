@@ -16,7 +16,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "XcutionSociety\\Tools\\": "src/"
+      "XcutionSociety\\PHP-Tools\\": "src/"
     }
   },
   "extra": {
