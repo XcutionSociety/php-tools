@@ -16,16 +16,16 @@
   ],
   "autoload": {
     "psr-4": {
-      "XcutionSociety\\PHP-Tools\\": "src/"
+      "PHP-Tools\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "XcutionSociety\\Tools\\Utils"
+        "PHP-Tools\\Utils"
       ],
       "aliases": {
-        "XCS": "XcutionSociety\\Tools\\Utils"
+        "XCS": "PHP-Tools\\Utils"
       }
     }
   },
