@@ -55,6 +55,8 @@ class HomeController extends Controller
 | XcTools::removeRupiah($value) | removeRupiah("Rp. 10.000") | 10000
 | XcDateTimes::indoDate($date,$day) | indoDate("2019-04-09",false) | 09 April 2019
 | XcDateTimes::indoDate($date,$day) | indoDate("2019-04-09",true) | Selasa, 09 April 2019
+| XcDateTimes::indoDateMedium($date,$day) | indoDateMedium("2019-04-09",false) | 09 Apr 2019
+| XcDateTimes::indoDateMedium($date,$day) | indoDateMedium("2019-04-09",true) | Selasa, 09 Apr 2019
 | XcDateTimes::time24to12($time) | time24to12("13:30") | 01:30 PM
 | XcDateTimes::time12to24($time,$suffix) | time12to24("1:30 PM","WIB") | 13:30 WIB
 
