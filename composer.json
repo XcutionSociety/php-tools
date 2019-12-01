@@ -1,6 +1,7 @@
 {
   "name": "xcutionsociety/php-tools",
   "description": "A collection of functions you might need",
+  "homepage": "https://packagist.org/packages/xcutionsociety/php-tools",
   "type": "library",
   "keywords": [
     "php",
@@ -16,7 +17,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "XcutionSociety\\": "src/"
+      "XcS\\": "src/"
     }
   },
   "minimum-stability": "stable",

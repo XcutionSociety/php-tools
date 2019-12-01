@@ -1,11 +1,11 @@
 <?php
 /**
- * Class Utils
+ * Class XcTools
  * @author XcutionSociety : https://github.com/XcutionSociety
  * @version 0.1
  */
 
-namespace XcutionSociety;
+namespace XcS;
 
 class XcTools
 {
@@ -97,86 +97,5 @@ class XcTools
     {
         return preg_replace('/[Rp. ]/', '', $value);
     }
-
-
-    /**
-     * This function is for converting date types to Long Indonesian date formats
-     * @param string $date
-     * @param bool $day
-     * @return string
-     *
-     */
-    public static function indoDate($date = "", $day = false){
-        $listDays = array ( 1 =>    'Senin',
-            'Selasa',
-            'Rabu',
-            'Kamis',
-            'Jumat',
-            'Sabtu',
-            'Minggu'
-        );
-
-        $listMonth = array (1 =>   'Januari',
-            'Februari',
-            'Maret',
-            'April',
-            'Mei',
-            'Juni',
-            'Juli',
-            'Agustus',
-            'September',
-            'Oktober',
-            'November',
-            'Desember'
-        );
-        $split 	  = explode('-', $date);
-        $indoDate = $split[2] . ' ' . $listMonth[ (int)$split[1] ] . ' ' . $split[0];
-
-        if ($day) {
-            $num = date('N', strtotime($date));
-            return $listDays[$num] . ', ' . $indoDate;
-        }
-        return $indoDate;
-    }
-
-    /**
-     * This function is for converting date types to Medium Indonesian date formats
-     * @param string $date
-     * @param bool $day
-     * @return string
-     */
-    public static function indoDateMedium($date = "", $day = false){
-        $listDays = array ( 1 =>    'Senin',
-            'Selasa',
-            'Rabu',
-            'Kamis',
-            'Jumat',
-            'Sabtu',
-            'Minggu'
-        );
-
-        $listMonth = array (1 =>   'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'Mei',
-            'Jun',
-            'Jul',
-            'Ags',
-            'Sep',
-            'Okt',
-            'Nov',
-            'Des'
-        );
-        $split 	  = explode('-', $date);
-        $indoDate = $split[2] . ' ' . $listMonth[ (int)$split[1] ] . ' ' . $split[0];
-
-        if ($day) {
-            $num = date('N', strtotime($date));
-            return $listDays[$num] . ', ' . $indoDate;
-        }
-        return $indoDate;
-    }
-
 
 }
