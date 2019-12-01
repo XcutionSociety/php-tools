@@ -1,6 +1,6 @@
 # XcutionSociety PHP Tools
 
-[![Build Status](https://img.shields.io/badge/packagist-v0.1.3-blue.svg)](https://packagist.org/packages/xcutionsociety/php-tools)
+[![Build Status](https://img.shields.io/badge/packagist-v0.1.3-blue.svg)](https://xcutionsociety.github.io/php-tools/)
 
 ## Install
 ```composer
