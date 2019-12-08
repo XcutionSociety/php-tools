@@ -60,13 +60,13 @@ class HomeController extends Controller
 | XcDateTimes::time24to12($time) | time24to12("13:30") | 01:30 PM
 | XcDateTimes::time12to24($time,$suffix) | time12to24("1:30 PM","WIB") | 13:30 WIB
 
-##Updated
+## Updated
 
 |From|To|
 |-----|-----|
 |XcTools::rupiah($value)|XcTools::rupiah($value,$decimal)
 
-##Added
+## Added
 
 New Function for Tree Arrays <br>
 Example :
