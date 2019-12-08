@@ -61,11 +61,13 @@ class HomeController extends Controller
 | XcDateTimes::time12to24($time,$suffix) | time12to24("1:30 PM","WIB") | 13:30 WIB
 
 ##Updated
+
 |From|To|
 |-----|-----|
 |XcTools::rupiah($value)|XcTools::rupiah($value,$decimal)|
 
 ##Added
+
 New Function for Tree Arrays <br>
 Example :
 ```php
@@ -113,6 +115,7 @@ $result = XcTrees::getTreeList($data, $parent = 'parent_id', $son = 'id', $pid =
 echo json_encode($result);
 ```
 And Result :
+
 ```json
 [
    {
