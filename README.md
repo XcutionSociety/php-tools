@@ -64,7 +64,7 @@ class HomeController extends Controller
 
 |From|To|
 |-----|-----|
-|XcTools::rupiah($value)|XcTools::rupiah($value,$decimal)|
+|XcTools::rupiah($value)|XcTools::rupiah($value,$decimal)
 
 ##Added
 
