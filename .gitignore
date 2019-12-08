@@ -1,3 +1,4 @@
 composer.lock
 .idea
 .command
+src/index.php

@@ -81,11 +81,12 @@ class XcTools
     /**
      * This function is to format rupiah at numbers
      * @param string $value
+     * @param int $decimal
      * @return string
      */
-    public static function rupiah($value)
+    public static function rupiah($value,$decimal = 0)
     {
-        return "Rp. " . number_format($value, 0, ',', '.');
+        return "Rp. " . number_format($value, $decimal, ',', '.');
     }
 
     /**
@@ -95,7 +96,7 @@ class XcTools
      */
     public static function removeRupiah($value)
     {
-        return preg_replace('/[Rp. ]/', '', $value);
+        return round(preg_replace('/[Rp. ]/', '', $value));
     }
 
 }

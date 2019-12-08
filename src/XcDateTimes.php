@@ -43,12 +43,12 @@ class XcDateTimes
             'November',
             'Desember'
         );
-        $split = explode('-', $date);
+        $split = explode('-', date("Y-m-d",strtotime($date)));
         $indoDate = $split[2] . ' ' . $listMonth[(int)$split[1]] . ' ' . $split[0];
 
         if ($day) {
             $num = date('N', strtotime($date));
-            return $listDays[$num] . ', ' . $indoDate;
+            $indoDate = $listDays[$num] . ', ' . $indoDate;
         }
         return $indoDate;
     }
@@ -83,12 +83,12 @@ class XcDateTimes
             'Nov',
             'Des'
         );
-        $split = explode('-', $date);
+        $split = explode('-', date("Y-m-d",strtotime($date)));
         $indoDate = $split[2] . ' ' . $listMonth[(int)$split[1]] . ' ' . $split[0];
 
         if ($day) {
             $num = date('N', strtotime($date));
-            return $listDays[$num] . ', ' . $indoDate;
+            $indoDate = $listDays[$num] . ', ' . $indoDate;
         }
         return $indoDate;
     }
@@ -113,6 +113,67 @@ class XcDateTimes
     {
         $result = date("H:i", strtotime($time)) . " " . $suffix;
         return $result;
+    }
+
+    /**
+     * @param string $date
+     * @param bool $day
+     * @param bool $time
+     * @param string $suffixTime
+     * @param string $type
+     * @return string
+     */
+    public static function indoDateTime($date = "", $day = false, $time = false, $suffixTime = "", $type = "M")
+    {
+        $listDays = array(1 => 'Senin',
+            'Selasa',
+            'Rabu',
+            'Kamis',
+            'Jumat',
+            'Sabtu',
+            'Minggu'
+        );
+        $listMonth = array(1 => 'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'Mei',
+            'Jun',
+            'Jul',
+            'Ags',
+            'Sep',
+            'Okt',
+            'Nov',
+            'Des'
+        );
+        if (strtoupper($type) == "L") {
+            $listMonth = array(1 => 'Januari',
+                'Februari',
+                'Maret',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Agustus',
+                'September',
+                'Oktober',
+                'November',
+                'Desember'
+            );
+        }
+        $split = explode('-', date("Y-m-d", strtotime($date)));
+        $indoDate = $split[2] . ' ' . $listMonth[(int)$split[1]] . ' ' . $split[0];
+
+        if ($day) {
+            $num = date('N', strtotime($date));
+            $indoDate = $listDays[$num] . ', ' . $indoDate;
+        }
+
+        if ($time) {
+            $result = date("H:i", strtotime($date)) . " " . $suffixTime;
+            $indoDate = $indoDate . ' ' . $result;
+        }
+        return $indoDate;
     }
 
 

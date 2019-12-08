@@ -1,6 +1,6 @@
 # XcutionSociety PHP Tools
 
-[![Build Status](https://img.shields.io/badge/packagist-v0.1.3-blue.svg)](https://xcutionsociety.github.io/php-tools/)
+[![Build Status](https://img.shields.io/badge/packagist-v0.1.4-success.svg)](https://xcutionsociety.github.io/php-tools/)
 
 ## Install
 ```composer
@@ -51,14 +51,125 @@ class HomeController extends Controller
 | XcTools::stringAndNumber($lenght) | stringAndNumber("5") | IPDeT
 | XcTools::encrypt($value) | encrypt("09882") | RjdDMjA5ODgyTWJ6RA==
 | XcTools::decrypt($value) | decrypt("RjdDMjA5ODgyTWJ6RA==") | 09882
-| XcTools::rupiah($value) | rupiah("10000") | Rp. 10.000
-| XcTools::removeRupiah($value) | removeRupiah("Rp. 10.000") | 10000
+| XcTools::rupiah($value,$decimal) | rupiah("10000",2) | Rp. 10.000,00
+| XcTools::removeRupiah($value) | removeRupiah("Rp. 10.000,00") | 10000
 | XcDateTimes::indoDate($date,$day) | indoDate("2019-04-09",false) | 09 April 2019
 | XcDateTimes::indoDate($date,$day) | indoDate("2019-04-09",true) | Selasa, 09 April 2019
 | XcDateTimes::indoDateMedium($date,$day) | indoDateMedium("2019-04-09",false) | 09 Apr 2019
 | XcDateTimes::indoDateMedium($date,$day) | indoDateMedium("2019-04-09",true) | Selasa, 09 Apr 2019
 | XcDateTimes::time24to12($time) | time24to12("13:30") | 01:30 PM
 | XcDateTimes::time12to24($time,$suffix) | time12to24("1:30 PM","WIB") | 13:30 WIB
+
+##Updated
+|From|To|
+|-----|-----|
+|XcTools::rupiah($value)|XcTools::rupiah($value,$decimal)|
+
+##Added
+New Function for Tree Arrays <br>
+Example :
+```php
+<?php 
+
+$data = array(
+    array(
+        'id' => 1,
+        'nama' => "Joni",
+        'parent_id' => 0
+    ),
+    array(
+        'id' => 2,
+        'nama' => "Joko",
+        'parent_id' => 0
+    ),
+    array(
+        'id' => 3,
+        'nama' => "Jotte",
+        'parent_id' => 0
+    ),
+    array(
+        'id' => 4,
+        'nama' => "Doni",
+        'parent_id' => 1
+    ),
+    array(
+        'id' => 5,
+        'nama' => "Doko",
+        'parent_id' => 4
+    ),
+    array(
+        'id' => 6,
+        'nama' => "Dotte",
+        'parent_id' => 5
+    ),
+    array(
+        'id' => 7,
+        'nama' => "Darius",
+        'parent_id' => 1
+    ),
+);
+
+$result = XcTrees::getTreeList($data, $parent = 'parent_id', $son = 'id', $pid = 0, $child = 'childs');
+echo json_encode($result);
+```
+And Result :
+```json
+[
+   {
+      "id":1,
+      "nama":"Joni",
+      "parent_id":0,
+      "child":[
+         {
+            "id":4,
+            "nama":"Doni",
+            "parent_id":1,
+            "child":[
+               {
+                  "id":5,
+                  "nama":"Doko",
+                  "parent_id":4,
+                  "child":[
+                     {
+                        "id":6,
+                        "nama":"Dotte",
+                        "parent_id":5,
+                        "child":[
+
+                        ]
+                     }
+                  ]
+               }
+            ]
+         },
+         {
+            "id":7,
+            "nama":"Darius",
+            "parent_id":1,
+            "child":[
+
+            ]
+         }
+      ]
+   },
+   {
+      "id":2,
+      "nama":"Joko",
+      "parent_id":0,
+      "child":[
+
+      ]
+   },
+   {
+      "id":3,
+      "nama":"Jotte",
+      "parent_id":0,
+      "child":[
+
+      ]
+   }
+]
+````
 
 
 ## License
