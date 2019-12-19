@@ -57,6 +57,7 @@ class HomeController extends Controller
 | XcDateTimes::indoDate($date,$day) | indoDate("2019-04-09",true) | Selasa, 09 April 2019
 | XcDateTimes::indoDateMedium($date,$day) | indoDateMedium("2019-04-09",false) | 09 Apr 2019
 | XcDateTimes::indoDateMedium($date,$day) | indoDateMedium("2019-04-09",true) | Selasa, 09 Apr 2019
+| XcDateTimes::indoDateTime($date, $day, $time, $suffixTime, $type) | indoDateTime("2019-04-09 08:30:00", true, true, "WIB", "M") | Selasa, 09 Apr 2019 08:30 WIB
 | XcDateTimes::time24to12($time) | time24to12("13:30") | 01:30 PM
 | XcDateTimes::time12to24($time,$suffix) | time12to24("1:30 PM","WIB") | 13:30 WIB
 

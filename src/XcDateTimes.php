@@ -105,6 +105,7 @@ class XcDateTimes
     }
 
     /**
+     * This function is for converting time 12 hours to 24 hours formats
      * @param string $time
      * @param string $suffix
      * @return string
@@ -116,6 +117,7 @@ class XcDateTimes
     }
 
     /**
+     * This function is for converting datetime format to long or medium format date
      * @param string $date
      * @param bool $day
      * @param bool $time
