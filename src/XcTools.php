@@ -105,7 +105,7 @@ class XcTools
      */
     public static function terbilangEn($nilai)
     {
-        if ($nilai < 0) return 'minus ' . terbilang(-$nilai);
+        if ($nilai < 0) return 'minus ' . terbilangEn(-$nilai);
         else if ($nilai < 10) {
             switch ($nilai) {
                 case 0:
@@ -139,27 +139,27 @@ class XcTools
                 else if ($sisa == 3) return 'thirteen';
                 else if ($sisa == 5) return 'fifteen';
                 else if ($sisa == 8) return 'eighteen';
-                else return terbilang($sisa) . 'teen';
+                else return terbilangEn($sisa) . 'teen';
             } else if ($kepala == 2) $hasil = 'twenty';
             else if ($kepala == 3) $hasil = 'thirty';
             else if ($kepala == 5) $hasil = 'fifty';
             else if ($kepala == 8) $hasil = 'eighty';
-            else $hasil = terbilang($kepala) . 'ty';
+            else $hasil = terbilangEn($kepala) . 'ty';
         } else if ($nilai < 1000) {
             $kepala = floor($nilai / 100);
             $sisa = $nilai % 100;
-            $hasil = terbilang($kepala) . ' hundred';
+            $hasil = terbilangEn($kepala) . ' hundred';
         } else if ($nilai < 1000000) {
             $kepala = floor($nilai / 1000);
             $sisa = $nilai % 1000;
-            $hasil = terbilang($kepala) . ' thousand';
+            $hasil = terbilangEn($kepala) . ' thousand';
         } else if ($nilai < 1000000000) {
             $kepala = floor($nilai / 1000000);
             $sisa = $nilai % 1000000;
-            $hasil = terbilang($kepala) . ' million';
+            $hasil = terbilangEn($kepala) . ' million';
         } else return false;
 
-        if ($sisa > 0) $hasil .= ' ' . terbilang($sisa);
+        if ($sisa > 0) $hasil .= ' ' . terbilangEn($sisa);
         return $hasil;
     }
 
