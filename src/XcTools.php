@@ -105,7 +105,7 @@ class XcTools
      */
     public static function terbilangEn($nilai)
     {
-        if ($nilai < 0) return 'minus ' . terbilang(-$n);
+        if ($nilai < 0) return 'minus ' . terbilang(-$nilai);
         else if ($nilai < 10) {
             switch ($nilai) {
                 case 0:
@@ -146,16 +146,16 @@ class XcTools
             else if ($kepala == 8) $hasil = 'eighty';
             else $hasil = terbilang($kepala) . 'ty';
         } else if ($nilai < 1000) {
-            $kepala = floor($n / 100);
-            $sisa = $n % 100;
+            $kepala = floor($nilai / 100);
+            $sisa = $nilai % 100;
             $hasil = terbilang($kepala) . ' hundred';
         } else if ($nilai < 1000000) {
-            $kepala = floor($n / 1000);
-            $sisa = $n % 1000;
+            $kepala = floor($nilai / 1000);
+            $sisa = $nilai % 1000;
             $hasil = terbilang($kepala) . ' thousand';
         } else if ($nilai < 1000000000) {
-            $kepala = floor($n / 1000000);
-            $sisa = $n % 1000000;
+            $kepala = floor($nilai / 1000000);
+            $sisa = $nilai % 1000000;
             $hasil = terbilang($kepala) . ' million';
         } else return false;
 
